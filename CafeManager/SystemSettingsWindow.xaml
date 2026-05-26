@@ -1,0 +1,66 @@
+﻿<Window x:Class="RestaurantSystem.SystemSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="НАСТРОЙКИ СИСТЕМЫ" Height="600" Width="800" WindowStartupLocation="CenterScreen" Background="White">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#CCCCCC" Padding="10">
+            <TextBlock Text="НАСТРОЙКИ СИСТЕМЫ" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+        </Border>
+
+        <Border DockPanel.Dock="Left" Width="200" BorderBrush="Gray" BorderThickness="0,1,1,0" Padding="10">
+            <StackPanel>
+                <TextBlock Text=" Общие настройки" Margin="0,5" Padding="5" Background="#EEEEEE"/>
+                <TextBlock Text="≡ Настройки печати" Margin="0,5" Padding="5"/>
+                <TextBlock Text="≡ Настройки БД" Margin="0,5" Padding="5"/>
+                <TextBlock Text="≡ Резервное копирование" Margin="0,5" Padding="5" Background="#EEEEEE"/>
+                <TextBlock Text="≡ Пользователи" Margin="0,5" Padding="5" Background="#EEEEEE"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="РЕЗЕРВНОЕ КОПИРОВАНИЕ" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <StackPanel Grid.Row="0" Margin="20,25,0,0">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Частота автокопирования:" Width="180"/>
+                    <TextBox Text="Ежедневно в 03:00" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                    <TextBlock Text="Путь к архиву:" Width="180"/>
+                    <TextBox Text="D:\CafeBackups\" Width="200"/>
+                </StackPanel>
+                <Button Content="Создать копию сейчас" Width="150" Background="#555555" Foreground="White" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" Text="ПОЛЬЗОВАТЕЛИ" FontWeight="Bold" Margin="0,20,0,15" VerticalAlignment="Top"/>
+
+            <StackPanel Grid.Row="1" Margin="20,50,0,0" VerticalAlignment="Top">
+                <TextBlock Text="Активных сессий: 4" Margin="0,0,0,5"/>
+                <TextBlock Text="Политика паролей: Мин. 8 символов, смена раз в 30 дней" Margin="0,0,0,15"/>
+                <Button Content="Сбросить сессии" Width="120" Background="#555555" Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,20"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Сохранить" Width="100" Height="30" Background="#555555" Foreground="White" Margin="0,0,5,0"/>
+                <Button Content="Применить" Width="100" Height="30" Background="#888888" Foreground="White" Margin="0,0,5,0"/>
+                <Button Content="Отмена" Width="100" Height="30" Background="#888888" Foreground="White"/>
+            </StackPanel>
+            <Button Content="" Background="#555555" Foreground="White" Margin="1041,96,-526,202" Grid.Row="1" RenderTransformOrigin="1.224,2.275">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-218.466"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+    </DockPanel>
+</Window>

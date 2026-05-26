@@ -1,0 +1,67 @@
+﻿<Window x:Class="RestaurantSystem.KDSWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="KITCHEN DISPLAY SYSTEM" Height="700" Width="800" WindowStartupLocation="CenterScreen" Background="White">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#CCCCCC" Padding="10">
+            <TextBlock Text="KITCHEN DISPLAY SYSTEM" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+        </Border>
+
+        <TabControl Grid.Row="1" Margin="0,5">
+            <TabItem Header="Все заказы"/>
+            <TabItem Header="Кухня"/>
+            <TabItem Header="Бар"/>
+        </TabControl>
+
+        <ScrollViewer Grid.Row="2" Margin="0,10">
+            <StackPanel>
+                <!-- Заказ №3 -->
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Заказ №3 | Столик 3 | 14:30 | Официант: Иванова Е.П." FontWeight="Bold" Margin="0,0,0,5"/>
+                            <DataGrid AutoGenerateColumns="False" Height="50">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Блюдо" Width="*"/>
+                                    <DataGridTextColumn Header="Время" Width="80"/>
+                                    <DataGridTextColumn Header="Статус" Width="80"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0">
+                            <Button Content="Обновить" Width="100" Height="30" Background="#555555" Foreground="White" Margin="0,0,0,5"/>
+                            <Button Content="Звук" Width="100" Height="30" Background="#555555" Foreground="White" Margin="0,0,0,5"/>
+                            <Button Content="Статистика" Width="100" Height="30" Background="#555555" Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Заказ №5 -->
+                <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                    <StackPanel>
+                        <TextBlock Text="Заказ №5 | Столик 7 | 14:45 | Официант: Петрова М.С." FontWeight="Bold" Margin="0,0,0,5"/>
+                        <DataGrid AutoGenerateColumns="False" Height="50">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Блюдо" Width="*"/>
+                                <DataGridTextColumn Header="Время" Width="80"/>
+                                <DataGridTextColumn Header="Статус" Width="80"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="RestaurantSystem.MenuManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="УПРАВЛЕНИЕ МЕНЮ" Height="600" Width="900" WindowStartupLocation="CenterScreen" Background="White">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#CCCCCC" Padding="10">
+            <TextBlock Text="УПРАВЛЕНИЕ МЕНЮ" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10">
+            <TextBlock Text="Категория:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Text="Все категории" Width="200" Height="25"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" Margin="0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="*"/>
+                <DataGridTextColumn Header="Категория" Width="100"/>
+                <DataGridTextColumn Header="Цена" Width="80"/>
+                <DataGridTextColumn Header="Себестоим." Width="100"/>
+                <DataGridTextColumn Header="Время" Width="80"/>
+                <DataGridTextColumn Header="Статус" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+            <Button Content="Добавить блюдо" Width="120" Height="30" Background="#555555" Foreground="White" Margin="0,0,10,0"/>
+            <Button Content="Импорт из JSON" Width="130" Height="30" Background="#555555" Foreground="White"/>
+        </StackPanel>
+
+        <Button Grid.Row="3" Content="Назад" Width="80" Height="30" Background="#555555" Foreground="White" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
